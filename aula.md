@@ -5,7 +5,7 @@ Como um lego, você vai utilizar peças para criar algoritmos, ou seja, para res
 **Algoritmo**: Sequência de passos lógica e finita para resolução de um problema
 
 ## Peças de uma linguagem
-- Comentário
+- [x] Comentário
 - Declaração de variáveis (const, let)
 - Operadores (atribuição, concatenação, matemáticos, lógicos)
 - Tipos de dados (string, number, boolean)
@@ -17,4 +17,24 @@ Como um lego, você vai utilizar peças para criar algoritmos, ou seja, para res
 - Coletar os dados
     - Entender o problema, geralmente tenho dados e informações em volta do problema, e vou usar as informações para trabalhar com elas.
 - Processar os dados (manipular, alterar...)
-- Apresentar dados    
+- Apresentar dados   
+
+## Escopo e variáveis:
+- Variáveis globais e locais
+    - Let(pode ser retribuido) -> As variáveis declaradas com let podem ser reatribuídas. Isso significa que você pode alterar o valor da variável depois de sua declaração.
+
+    - Const(Não pode ser reatribuido) -> As variáveis declaradas com const não podem ser reatribuídas depois de sua declaração. Isso significa que o valor da variável não pode ser alterado. No entanto, se a variável for um objeto ou um array, você ainda pode modificar as propriedades do objeto ou os elementos do array.
+
+    - Variáveis globais -> Variáveis globais são declaradas fora de qualquer função ou bloco de código. Também podem ser criadas implicitamente ao atribuir um valor a uma variável não declarada com var, let, ou const (não recomendado). Essas variáveis estão acessíveis de qualquer lugar no código, em qualquer função ou bloco.
+
+    - Variáveis locais -> Variáveis locais são declaradas dentro de uma função ou bloco de código. Elas só existem e são acessíveis dentro desse contexto específico. Essas variáveis são acessíveis apenas dentro da função ou bloco onde foram declaradas. Fora desse escopo, elas não estão disponíveis.
+
+
+    
+## Tipos de dados:
+String (textos): "" '' ``
+Numbe: 2 1.4 
+Function
+
+## Operadores
+Operadores de atribuição de valor "="
