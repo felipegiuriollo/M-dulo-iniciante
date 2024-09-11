@@ -60,3 +60,6 @@ Como um lego, você vai utilizar peças para criar algoritmos, ou seja, para res
 
 # Estrutura de repetição
 - [x] While
+
+# Condicionais
+- [x] Switch
