@@ -20,7 +20,7 @@ Como um lego, você vai utilizar peças para criar algoritmos, ou seja, para res
 - Apresentar dados   
 
 ## Escopo e variáveis:
-- Variáveis globais e locais
+- [x] Variáveis globais e locais
     - Let(pode ser retribuido) -> As variáveis declaradas com let podem ser reatribuídas. Isso significa que você pode alterar o valor da variável depois de sua declaração.
 
     - Const(Não pode ser reatribuido) -> As variáveis declaradas com const não podem ser reatribuídas depois de sua declaração. Isso significa que o valor da variável não pode ser alterado. No entanto, se a variável for um objeto ou um array, você ainda pode modificar as propriedades do objeto ou os elementos do array.
@@ -32,9 +32,27 @@ Como um lego, você vai utilizar peças para criar algoritmos, ou seja, para res
 
     
 ## Tipos de dados:
-String (textos): "" '' ``
-Numbe: 2 1.4 
-Function
+- [x] String (textos): "" '' ``
+- [x] Number: 2 1.4 
+- [x] Boolean: true, false
+
 
 ## Operadores
-Operadores de atribuição de valor "="
+- [x] Operadores de atribuição de valor "="
+- [x] Operador de concatenação "+"
+
+## Estrutura de dados
+- Arrays:
+    - [x] Uma lista que contém qualquer tipo de dado
+
+### Objetos - Todo objeto tem uma propriedade e um valor
+- [x] Atributos e métodos
+    - Método é a mesma coisa que função, diferença => Método fica dentro de um objetivo, enquanto a fução fica fora do objeto.
+- [x] Criação e manipulação de objetos
+- [x] Acesso a propriedade de objetos
+
+### Functions
+- [x] Criar, passar argumento dentro da função
+- [x] Executar a função
+- [x] Arrow Function
+- [x] Name Function

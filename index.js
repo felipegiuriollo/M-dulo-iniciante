@@ -1,11 +1,16 @@
-let mensagem = 'faltou o de Oliveira';
+// array, objetos
 
-{
-    const mensagem = 'Felipe Giuriollo';
-    console.log(mensagem);
+let meta = {
+    value: 'Ler um livro por mês',
+    checked: false,
+    imprime: (info) => {
+        console.log(info)
+    }
 }
 
-console.log(mensagem);
+meta.imprime(meta.checked)
 
-mensagem = 'Felipe de Oliveira Giuriollo';
-console.log(mensagem);
+// function      // arrow function
+const criarMeta = () => {}
+
+function criarMeta () {}
