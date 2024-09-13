@@ -1,4 +1,5 @@
-import { select, input } from '@inquirer/prompts';
+import { select, input, checkbox } from '@inquirer/prompts';
+
 
 let meta = {
     value: 'Tomar 3L água por dia',
@@ -19,11 +20,37 @@ const cadastrarMeta = async () => {
 
 }
 
+const listarMetas = async () => {
+    const respostas = await checkbox({
+        message: "Use as SETAS para mudar a meta / ESPAÇO para marcar/desmarcar / ENTER para finalizar",
+        choices: [...metas],
+        instructions: false
+    })
+    
+    if(respostas.length == 0){
+        console.log('Nenhuma meta selecionada!')
+        return
+    }
+
+    metas.forEach((m)=> {
+        m.checked = false
+    })
+
+    respostas.forEach((resposta) => {
+        const meta = metas.find((m) => {
+            return m.value == resposta
+        })
+        meta.checked = true
+    })
+    console.log('Metas concluidas!')
+}
+
+
 const start = async () => {
     while(true){
         // o Await, sempre combinado com o async na função, significa que temos que esperar um retorno do usuário, nesse caso ele selecionar uma opção, se não a máquina vai ficar processando todas as linhas de código abaixo
         const opcao = await select ({
-            message: "Menu >",
+            message: "Menu:",
             choices: [
                 {
                     name: "Cadastrar Meta",
@@ -47,7 +74,7 @@ const start = async () => {
                 break
 
                 case 'Listar':
-                console.log('Vamos listar')
+                    await listarMetas()
                 break
 
                 case 'Sair':
