@@ -63,3 +63,13 @@ Como um lego, você vai utilizar peças para criar algoritmos, ou seja, para res
 
 # Condicionais
 - [x] Switch
+
+## Módulos em Node.js
+- [x] Importação de módulos (require, CommonJS)
+ - npm install inquirer => fez trazer todas as dependências da biblioteca para dentro do projeto
+- [x] Bibliotca 'inquirer' para criar prompts interativos
+
+## Programação assíncrona e Promises
+- [x] Uso de funções assíncronas (async/await)
+    - O async é await é usado quando temos que esperar algum tipo de resposta, como por exemplo a escolha de uma opção em um menu, porém o sistema continua funcionando de forma assíncrona.
+    - Promises -> Toda função que vai ter a palavra await em algum lugar, a função deverá conter o async
