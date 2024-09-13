@@ -38,8 +38,9 @@ Como um lego, você vai utilizar peças para criar algoritmos, ou seja, para res
 
 
 ## Operadores
-- [x] Operadores de atribuição de valor "="
+- [x] Operadores de atribuição de valor "="(recebe)
 - [x] Operador de concatenação "+"
+- [x] Operadores de comparação: "=="(igual) / "!="(diferente) / "< >"(maior/menor) / "<="(menor igual) / ">="(maior igual)
 
 ## Estrutura de dados
 - Arrays:
