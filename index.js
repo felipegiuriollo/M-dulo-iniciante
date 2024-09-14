@@ -72,7 +72,7 @@ const metasAbertas = async () => {
     }
 
     await select ({
-        message:  'Metas abertas',
+        message:  'Metas abertas = ' + abertas.length,
         choices: [...abertas]
     })
 }
