@@ -61,6 +61,22 @@ const metasRealizadas = async () => {
     })
 }
 
+const metasAbertas = async () => {
+    const abertas = metas.filter((meta) => {
+        return meta.checked != true
+    })
+
+    if(abertas.length == 0){
+        console.log('Não existem metas abertas! :D')
+        return
+    }
+
+    await select ({
+        message:  'Metas abertas',
+        choices: [...abertas]
+    })
+}
+
 const start = async () => {
     while(true){
         // o Await, sempre combinado com o async na função, significa que temos que esperar um retorno do usuário, nesse caso ele selecionar uma opção, se não a máquina vai ficar processando todas as linhas de código abaixo
@@ -78,6 +94,10 @@ const start = async () => {
                 {
                     name: "Metas realizadas",
                     value: "Realizadas"
+                },
+                {
+                    name: "Metas Abertas",
+                    value: "Abertas"
                 },
                 {
                     name: "Sair",
@@ -98,6 +118,10 @@ const start = async () => {
 
                 case 'Realizadas':
                     await metasRealizadas()                    
+                break
+                
+                case 'Abertas':
+                    await  metasAbertas()
                 break
 
                 case 'Sair':
