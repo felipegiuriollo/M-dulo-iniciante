@@ -5,7 +5,7 @@ Como um lego, você vai utilizar peças para criar algoritmos, ou seja, para res
 **Algoritmo**: Sequência de passos lógica e finita para resolução de um problema
 
 ## Peças de uma linguagem
-- [x] Comentário
+- Comentário
 - Declaração de variáveis (const, let)
 - Operadores (atribuição, concatenação, matemáticos, lógicos)
 - Tipos de dados (string, number, boolean)
@@ -47,8 +47,8 @@ Como um lego, você vai utilizar peças para criar algoritmos, ou seja, para res
 
 ### Arrays:
     - [x] Uma lista que contém qualquer tipo de dado
-    - [x] Métodos de array: push/ [find/forEach/filter]: Hof (higher order functions)        
-    - Metodo é toda função que está dentro de um objeto
+    - [x] Métodos de array: push/ [find/forEach/filter/map]: Hof (higher order functions)        
+        - Metodo é toda função que está dentro de um objeto
 
 ### Objetos - Todo objeto tem uma propriedade e um valor
 - [x] Atributos e métodos
