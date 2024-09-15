@@ -77,6 +77,31 @@ const metasAbertas = async () => {
     })
 }
 
+const deletarMetas = async () => {
+    const desmarcadas = metas.map((meta) => {
+        return { value: meta.value, checked: false }
+    })
+
+    const itensDeletar = await checkbox({
+        message: 'Selecionar item para deletar',
+        choices: [...desmarcadas],
+        instructions: false
+    })
+
+    if(itensDeletar == 0){
+        return
+    }
+
+    itensDeletar.forEach((item) => {
+        metas = metas.filter((meta) => {
+            return meta.value != item
+        })
+    })
+
+    console.log('Meta(s) deletada(s) com sucesso!')
+
+}
+
 const start = async () => {
     while(true){
         // o Await, sempre combinado com o async na função, significa que temos que esperar um retorno do usuário, nesse caso ele selecionar uma opção, se não a máquina vai ficar processando todas as linhas de código abaixo
@@ -100,6 +125,10 @@ const start = async () => {
                     value: "Abertas"
                 },
                 {
+                    name: "Deletar Metas",
+                    value: "Deletar"
+                },
+                {
                     name: "Sair",
                     value: "Sair"
                 }
@@ -114,6 +143,10 @@ const start = async () => {
 
                 case 'Listar':
                     await listarMetas()
+                break
+
+                case 'Deletar':
+                    await deletarMetas()
                 break
 
                 case 'Realizadas':
