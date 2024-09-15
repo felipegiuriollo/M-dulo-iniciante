@@ -73,6 +73,13 @@ Como um lego, você vai utilizar peças para criar algoritmos, ou seja, para res
 - [x] Importação de módulos (require, CommonJS)
  - npm install inquirer => fez trazer todas as dependências da biblioteca para dentro do projeto
 - [x] Bibliotca 'inquirer' para criar prompts interativos
+- [x] FS (file system)
+
+## JSON
+- [x] Javascript Objetct Notation
+    - Maneira de ter arquivos .json
+- [x] JSON.parse() -> Transforma de JSON para JS
+- [x] JSON.stringify() -> Transforma de JS para JSON
 
 ## Programação assíncrona e Promises
 - [x] Uso de funções assíncronas (async/await)

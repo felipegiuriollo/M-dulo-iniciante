@@ -1,13 +1,32 @@
 import { select, input, checkbox } from '@inquirer/prompts';
+import {promises as fs} from 'fs'
+
 
 let mensagem = 'Bem vindo ao APP de metas!'
+
+let metas
+
+const carregarMetas = async () => {
+    try {
+        const dados = await fs.readFile('metas.json', "utf-8")
+        metas = JSON.parse(dados)
+    }
+    catch(erro){
+        metas = []
+    }
+}
+
+const salvarMetas = async () => {
+    await fs.writeFile("metas.json", JSON.stringify(metas, null, 2))
+}
+
 
 //let meta = {
 //    value: 'Tomar 3L água por dia',
 //    checked: false
 //}
 
-let metas = []
+
 
 const cadastrarMeta = async () => {
     const meta = await input({message: 'Digite sua meta: '})
@@ -24,6 +43,11 @@ const cadastrarMeta = async () => {
 }
 
 const listarMetas = async () => {
+    if(metas.length == 0){
+        mensagem = "Não existem metas"
+        return
+    }
+
     const respostas = await checkbox({
         message: "Use as SETAS para mudar a meta / ESPAÇO para marcar/desmarcar / ENTER para finalizar",
         choices: [...metas],
@@ -50,6 +74,11 @@ const listarMetas = async () => {
 }
 
 const metasRealizadas = async () => {
+    if(metas.length == 0){
+        mensagem = "Não existem metas"
+        return
+    }
+
     const realizadas = metas.filter((meta) => {
         return meta.checked
     })
@@ -66,6 +95,12 @@ const metasRealizadas = async () => {
 }
 
 const metasAbertas = async () => {
+
+    if(metas.length == 0){
+        mensagem = "Não existem metas"
+        return
+    }
+
     const abertas = metas.filter((meta) => {
         return meta.checked != true
     })
@@ -83,6 +118,11 @@ const metasAbertas = async () => {
 }
 
 const deletarMetas = async () => {
+    if(metas.length == 0){
+        mensagem = "Não existem metas"
+        return
+    }
+
     const desmarcadas = metas.map((meta) => {
         return { value: meta.value, checked: false }
     })
@@ -118,8 +158,13 @@ const mostrarMensagem = () => {
 }
 
 const start = async () => {
+
+    await carregarMetas()
+
     while(true){
         mostrarMensagem()
+        await salvarMetas()
+
         // o Await, sempre combinado com o async na função, significa que temos que esperar um retorno do usuário, nesse caso ele selecionar uma opção, se não a máquina vai ficar processando todas as linhas de código abaixo
         const opcao = await select ({
             message: "Menu:",
@@ -154,7 +199,6 @@ const start = async () => {
         switch(opcao){
             case 'Cadastrar':
                 await cadastrarMeta()
-                console.log(metas)
                 break
 
                 case 'Listar':
