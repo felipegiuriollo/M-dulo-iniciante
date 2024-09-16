@@ -151,6 +151,7 @@ const mostrarMensagem = () => {
     console.clear();
 
     if(mensagem != ""){
+        console.log("")
         console.log(mensagem)
         console.log("")
         mensagem = ""
@@ -218,7 +219,7 @@ const start = async () => {
                 break
 
                 case 'Sair':
-                    console.log('Até a próxima!')
+                    console.log('Até a próxima!')                    
                     return
         }
     }
